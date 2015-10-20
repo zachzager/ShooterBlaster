@@ -10,6 +10,7 @@ var keys;
 var firstDoors;
 var secondDoors;
 var hasKey = 0;
+var hasCoin = false;
 var lava;
 var lavas;
 var enemyGroup;
@@ -22,9 +23,12 @@ var baseDMG = 1;
 var baseSPD = 1;
 var baseHP = 1;
 var baseFR = 1;
+var lavaSPD = 10;
+var playerDMG = 10;
 var pauseInput;
 var background;
 var gameEndText;
+var counter = 0;
 
 // text related globals
 var coinText;
@@ -223,6 +227,9 @@ function create() {
 
     // put the weapons caches in the game
     addCaches();
+
+    // game timer
+    game.time.events.loop(Phaser.Timer.SECOND, updateCounter, this);
 
 }
 

@@ -9,23 +9,23 @@ function Projectile(game) {
                             /* Player Weapons */
     // bullets
     bullets = game.add.group();
-    weaponType(bullets,'bullets','pokeball',8,0.5,70,2,500,false,false);
+    weaponType(bullets,'bullets','pokeball',8,0.5,70,2*playerDMG/10,500,false,false);
 
     // rockets
     rockets = game.add.group();
-    weaponType(rockets,'rockets','bomb',20,0.8,1300,50,5,true,true);
+    weaponType(rockets,'rockets','bomb',20,0.8,1300,50*playerDMG/10,5,true,true);
 
     // lasers
     lasers = game.add.group();
-    weaponType(lasers,'lasers','greenBeam',10,0.15,35,2,300,false,false);
+    weaponType(lasers,'lasers','greenBeam',10,0.15,35,2,300*playerDMG/10,false,false);
 
     // multi (tomato) bullets
     multiBullets = game.add.group();
-    weaponType(multiBullets,'multiBullets','tomato',20,0.1,70,2,500,false,true);
+    weaponType(multiBullets,'multiBullets','tomato',20,0.1,70,2,500*playerDMG/10,false,true);
 
     // multi lasers
     multiLasers = game.add.group();
-    weaponType(multiLasers,'multiLasers','bluBall',20,0.5,35,2,1000,false,false);
+    weaponType(multiLasers,'multiLasers','bluBall',20,0.5,35,2,1000*playerDMG/10,false,false);
 
     // nukes
     nukes = game.add.group();
@@ -34,15 +34,15 @@ function Projectile(game) {
                             /* Enemy weapons */
     // enemy bullets
     Ebullets = game.add.group();
-    weaponType(Ebullets,'Ebullets','pokeball',8,0.5,150,2*baseDMG,500,false,false);
+    weaponType(Ebullets,'Ebullets','pokeball',8,0.5,150*baseFR,2*baseDMG,500,false,false);
 
     // enemy lasers
     Elasers = game.add.group();
-    weaponType(Elasers,'Elasers','greenBeam',10,0.4,10,20*baseDMG,600,false,false);
+    weaponType(Elasers,'Elasers','greenBeam',10,0.4,10*baseFR,20*baseDMG,600,false,false);
 
     // enemy bombs
     Ebombs = game.add.group();
-    weaponType(Ebombs,'Ebombs','aBomb',80,1,3000,300*baseDMG,300,false,true);
+    weaponType(Ebombs,'Ebombs','aBomb',80,1,3000*baseFR,300*baseDMG,300,false,true);
 }
 
 function weaponType(group,name,img,size,prop,rate,pwr,speed,homing,explosive) {

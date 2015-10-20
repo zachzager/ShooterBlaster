@@ -1,5 +1,15 @@
 // access.js
 
+function restart() {
+	endScene.stop();
+	game.state.restart();
+	setupKey();
+}
+
+function updateCounter() {
+	counter++;
+}
+
 function setupKey() {
 	keys = game.add.group();
 	keys.enableBody = true;
@@ -8,6 +18,8 @@ function setupKey() {
 }
 
 function changeBackground() {
+	startScene.stop();
+	bossScene.play();
 	background.kill();
 }
 
@@ -19,33 +31,16 @@ function firstDoor() {
 	firstDoor.scale.set(0.15, 0.15);
 }
 
-function killPlayer() {
-	player.kill();
-	game.add.text(player.x, player.y, "GAME OVER",
-		{ font: "30px Arial", fill: "#fff", align: "center" });
-	game.time.events.add(Phaser.Timer.SECOND * 3, restart, this);
-}
-
-function restart() {
-	game.state.restart();
-	setupKey();
-}
-
+// player picks up key
 function collectKey(player, key) {
     key.kill();
     hasKey += 1;
 }
 
+// player unlocks door/computer tower
 function openDoor() {
 	if (hasKey == 1) {
 		firstDoors.destroy();
 	}
 }
 
-function openEndDoor() {
-	if (hasKey == 1) {
-		game.add.text(100, 1500, "LEVEL COMPLETE",
-		{ font: "30px Arial", fill: "#fff", align: "center" });
-		restart();
-	}
-}

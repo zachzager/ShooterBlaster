@@ -44,21 +44,25 @@ Dogecoin.prototype.update = function() {
 }
 
 function pickUpDogeCoin() {
+	bossScene.stop();
+	startScene.stop();
+	endScene.play();
 	this.kill();
-	win();
+	hasCoin = true;
+	if (hasCoin) {
+		win();
+	}
 }
 
 // Win situations
 function win () {
     //  You Win!
-    gameEndText = game.add.text(0,0, "YOU WIN!!!",
+    gameEndText = game.add.text(0,0, "YOU WON!!!\n(it took you "+counter+" seconds)",
         { font: "100px Arial", fill: "#fff", align: "center" });
     gameEndText.fixedToCamera = true;
     gameEndText.cameraOffset.setTo(300,300);
+    hasCoin = false;
     game.time.events.add(Phaser.Timer.SECOND * 5, restart, this);
 }
-
-
-
 
 

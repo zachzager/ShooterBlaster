@@ -179,3 +179,10 @@ function weaponFire() {
     }
 }
 
+// player dies
+function killPlayer() {
+    player.kill();
+    game.add.text(player.x, player.y, "GAME OVER - You lasted: "+counter+" seconds",
+        { font: "30px Arial", fill: "#fff", align: "center" });
+    game.time.events.add(Phaser.Timer.SECOND * 3, restart, this);
+}
