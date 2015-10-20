@@ -252,14 +252,13 @@ function update() {
     game.physics.arcade.collide(block, walls);
 
     // lava/player collisions
-    /*
     game.physics.arcade.overlap(lava, player, killPlayer, null, this);
     game.physics.arcade.overlap(lava2, player, killPlayer, null, this);
     game.physics.arcade.overlap(lava3, player, killPlayer, null, this);
     game.physics.arcade.overlap(lava4, player, killPlayer, null, this);
     game.physics.arcade.overlap(lava5, player, killPlayer, null, this);
     game.physics.arcade.overlap(lava6, player, killPlayer, null, this);
-    game.physics.arcade.overlap(lava7, player, killPlayer, null, this);*/
+    game.physics.arcade.overlap(lava7, player, killPlayer, null, this);
 
     // player/misc. collisions
     game.physics.arcade.collide(player, firstDoors, openDoor, null, this);

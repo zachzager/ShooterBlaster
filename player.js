@@ -54,10 +54,10 @@ function Player(game, x, y, P_skin) { //, P_weapon) {
 function setSkin(skinType) {
 
     if (skinType == 1) {
-        P_skin.health = 15000;
+        P_skin.health = 200;
         P_skin.type = 1;
         P_skin.name = 'player1';
-        P_skin.speed = 10;
+        P_skin.speed = 7;
     }
 
     else {
