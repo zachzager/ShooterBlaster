@@ -17,15 +17,15 @@ function Projectile(game) {
 
     // lasers
     lasers = game.add.group();
-    weaponType(lasers,'lasers','greenBeam',10,0.15,35,2,300*playerDMG/10,false,false);
+    weaponType(lasers,'lasers','greenBeam',10,0.15,35,2*playerDMG/10,300,false,false);
 
     // multi (tomato) bullets
     multiBullets = game.add.group();
-    weaponType(multiBullets,'multiBullets','tomato',20,0.1,70,2,100*playerDMG/10,false,true);
+    weaponType(multiBullets,'multiBullets','tomato',20,0.1,70,2*playerDMG/10,500,false,true);
 
     // multi lasers
     multiLasers = game.add.group();
-    weaponType(multiLasers,'multiLasers','bluBall',20,0.5,35,2,1000*playerDMG/10,false,false);
+    weaponType(multiLasers,'multiLasers','bluBall',20,0.5,35,2*playerDMG/10,1000,false,false);
 
     // nukes
     nukes = game.add.group();
