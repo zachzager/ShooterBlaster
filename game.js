@@ -37,25 +37,28 @@ var coinString;
 function preload () {
 
     /* IMAGE FILES */
-    game.load.image('background2','images/space_mac.png');
-    game.load.image('xp','images/xp.jpg');
-    game.load.image('sandbrick','images/sandBrick.png');
-    game.load.image('lava', 'images/firewall.png');
+    game.load.image('background2','images/space_mac.png'); // from Apple
+    game.load.image('xp','images/xp.jpg'); // from Microsoft
+    game.load.image('sandbrick','images/sandBrick.png'); // from Sprite.Land
+    game.load.image('lava', 'images/firewall.png'); // from ventrino
     game.load.image('wall', 'images/wall.jpg');
         // http://i.ytimg.com/vi/fdJrQMvLHSM/hqdefault.jpg
     game.load.image('key', 'images/usb.png');
-    game.load.image('door', 'images/stone.png');
-    game.load.image('downloadDoor','images/download.png');
+        // from vector.me (found via Google Images)
     game.load.image('firstDoor', 'images/tower.png');
-    game.load.image('space', 'images/Deep-Space.jpg');
-    
-    // from ship sprite pack
+        // by Machovka (openclipart.org)
+    game.load.image('secondDoor', 'images/ethernet.png');
+        // from Stanford's "How to connect to a wired network" webpage
+    game.load.image('downloadDoor','images/download.png');
+        // by Dutch Icon (iconfinder.com)
+
+    // ship sprites by MillionthVector (http://millionthvector.blogspot.de)
     game.load.image('speedship','ship_sprites/speedship.png');
     game.load.image('heavyship','ship_sprites/heavyfreighter.png');
     game.load.image('elShip','ship_sprites/elShip.png');
 
     game.load.image('turrett','ship_sprites/medfrighter.png');
-        // cliparts.co (from Spaceship concept art for ELYSIUM by Ben Mauro)
+        // Spaceship concept art for ELYSIUM by Ben Mauro
     game.load.image('player1','images/basicCar.png'); // player 1
         // http://www.xnadevelopment.com/sprites/images/Car.png
     game.load.image('player2','ship_sprites/medfighter.png');  // player 2
@@ -76,7 +79,7 @@ function preload () {
     game.load.spritesheet('explosion','images/explosion.png',60,60);
         // korzonrocknet.deviantart.com
     game.load.spritesheet('tomatoExplosion','images/tomato_explosion.png',222,222);
-        //
+        // Created by OpenGameArt user Reisi007
     game.load.image('bluBall','images/blueBall.png');
         // http://www.zeldadungeon.net/wiki/images/a/a9/Ball-1.png
     game.load.image('greenBeam','images/laser.png'); 
@@ -87,7 +90,6 @@ function preload () {
     game.load.image('aBomb','images/A-Bomb_Mk_2.gif');
         // A-bomb by Ironcommando   
 
-    game.load.image('menu','images/menu.png');
     game.load.json('difficulty', 'settings.json'); // loading JSON
 
     // barrel sprite posted on http://opengameart.org/ by user truezipp
@@ -99,16 +101,18 @@ function preload () {
     game.load.image('nuke_barrel','images/nuke_barrel.png');
 
     /* SOUND FILES */
+    // BGM from http://ericskiff.com/music/
     game.load.audio('startScene', 'audio/All of Us.mp3');
     game.load.audio('bossScene', "audio/We're the Resistors.mp3");
     game.load.audio('endScene', "audio/We're all under the stars.mp3");
+
+    // all other effects created by Yi Ding using Bfxr
     game.load.audio('bulletsFX', 'audio/bullets.wav');
     game.load.audio('lasersFX', 'audio/lasers.wav');
     game.load.audio('rocketsFX', 'audio/rockets.wav');
     game.load.audio('nukesFX', 'audio/nukes.wav');
     game.load.audio('multiBulletsFX', 'audio/multiBullets.wav');
     game.load.audio('multiLasersFX', 'audio/multiLasers.wav');
-    // game.load.audio('multiLasersFX', 'audio/multiLasers_b.wav');
     game.load.audio('hitFX', 'audio/hit.wav');
     game.load.audio('explosion1FX', 'audio/explosion1.wav');
     game.load.audio('explosion2FX', 'audio/explosion2.wav');
@@ -204,15 +208,13 @@ function create() {
     healthText.fixedToCamera = true;
     healthText.cameraOffset.setTo(750,20);
 
-    // doors and keys    
+    // doors
     firstDoor();
     secondDoors = game.add.group();
     secondDoors.enableBody = true;
-    secondDoor = secondDoors.create(15, 940, 'door');
+    secondDoor = secondDoors.create(0, 955, 'secondDoor');
     secondDoor.body.immovable = true;
-    secondDoor.scale.setTo(2.0, 1.0);
-    setupKey();
-    
+    secondDoor.scale.setTo(0.8, 0.25);
     // download door
     downloadDoors = game.add.group();
     downloadDoors.enableBody = true;
@@ -222,6 +224,8 @@ function create() {
     downloadDoor.scale.setTo(0.25,0.25);
     downloadDoor.anchor.setTo(0.5,0.5);
     downloadDoor.angle += 270;
+
+    setupKey();
 
     // put the weapons caches in the game
     addCaches();
@@ -243,7 +247,7 @@ function update() {
     // player update
     updatePlayer();
 
-    // wall collision prevention
+    // wall collisions
     weaponCollisionsUpdate();
     game.physics.arcade.collide(player, walls);
     game.physics.arcade.collide(enemyGroup,walls);

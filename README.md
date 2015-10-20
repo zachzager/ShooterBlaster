@@ -70,4 +70,14 @@ Files:
 		sounds that are included in the game. Everything was taken from free
 		online resources. 
 		
+Additional Two Aspects:
+	If you have the patience/skill to get to the boss portion of our one level
+	you'll get to see an awesome environment change in sound and visuals. 
+	We implemented a game counter that displays how long you lasted or how long
+	it took you to complete the level. We weren't sure what "global scoreboard"
+	really meant so we didn't get to hosting the leaderboard yet, but were in 
+	the process.
+	Also psuedo-realistic 2D (arcade) physics if you count our homing projectiles
+	and special squishy block near the end portion of the level.
+		
 END
