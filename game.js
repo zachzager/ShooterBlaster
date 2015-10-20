@@ -121,7 +121,7 @@ function preload () {
 
 function create() {
 
-    console.log('been updated');
+    console.log('going');
 
     // physics and backgrounds
     game.physics.startSystem(Phaser.Physics.ARCADE);
