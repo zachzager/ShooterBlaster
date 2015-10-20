@@ -120,9 +120,7 @@ function preload () {
 }
 
 function create() {
-
-    console.log('going');
-
+    
     // physics and backgrounds
     game.physics.startSystem(Phaser.Physics.ARCADE);
     background2 = game.add.tileSprite(1470, 990, 2640, 1920, 'background2');
