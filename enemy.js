@@ -149,8 +149,6 @@ var nextEnemyFire = 0;
 
 function enemyFire(group,enemy) {
 
-    console.log(enemy);
-
     // create sprite and define boundary properties
     group.createMultiple(1,group.img);
     group.setAll('checkWorldBounds',true);

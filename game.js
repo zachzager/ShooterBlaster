@@ -106,7 +106,7 @@ function preload () {
     game.load.audio('multiLasersFX', 'audio/multiLasers.wav');
     // game.load.audio('multiLasersFX', 'audio/multiLasers_b.wav');
     game.load.audio('hitFX', 'audio/hit.wav');
-    game.load.audilosion1FX', 'audio/explosion1.wav');
+    game.load.audio('explosion1FX', 'audio/explosion1.wav');
     game.load.audio('explosion2FX', 'audio/explosion2.wav');
     game.load.audio('explosion3FX', 'audio/explosion3.wav');
     game.load.audio('explosion4FX', 'audio/explosion4.wav');
