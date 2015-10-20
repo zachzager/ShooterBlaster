@@ -5,7 +5,7 @@ var enemyID = 0;
 
 var enemyType1 = setEnemyType(40,'speedship',100,200,250,1,10,18,'Ebullets'); // basic
 var enemyType2 = setEnemyType(120,'heavyship',250,200,350,1.3,60,80,'Ebullets'); // secondary
-var enemyType3 = setEnemyType(50,'elShip',300,1000,300,1.6,200,200,'Elasers');//boss
+var enemyType3 = setEnemyType(2000,'elShip',300,1000,450,1.6,200,200,'Elasers');//boss
 var enemyType4 = setEnemyType(60,'turrett',0,50,300,0.5,10,20,'Ebombs'); // turret
 
 var E_type = { health:20, name:"N/A", speed:0, coin:1, aggro:0, 
