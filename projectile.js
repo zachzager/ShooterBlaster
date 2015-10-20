@@ -38,7 +38,7 @@ function Projectile(game) {
 
     // enemy lasers
     Elasers = game.add.group();
-    weaponType(Elasers,'Elasers','greenBeam',10,0.4,10*baseFR,20*baseDMG,600,false,false);
+    weaponType(Elasers,'Elasers','greenBeam',10,0.4,10*baseFR,20*baseDMG,700,false,false);
 
     // enemy bombs
     Ebombs = game.add.group();
