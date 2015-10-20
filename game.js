@@ -9,7 +9,7 @@ var block;
 var keys;
 var firstDoors;
 var secondDoors;
-var hasKey = 0;
+var hasKey;
 var hasCoin = false;
 var lava;
 var lavas;
@@ -183,6 +183,7 @@ function create() {
     player = new Player(game, 100, 100, P_skin);
     player.enableBody = true;
     player.body.collideWorldBounds = true;
+    hasKey = 0;
     
     // enemies
     addEnemies();
@@ -211,7 +212,6 @@ function create() {
     secondDoor.scale.setTo(2.0, 1.0);
     setupKey();
     
-
     // download door
     downloadDoors = game.add.group();
     downloadDoors.enableBody = true;
@@ -269,11 +269,7 @@ function update() {
     if (killCount == 7) {
         secondDoor.destroy();
     }
-    if (killCount == 16) {
-        game.add.text(player.x, player.y, "YOU WON!",
-            { font: "30px Arial", fill: "#fff", align: "center" });
-        game.time.events.add(Phaser.Timer.SECOND * 3, restart, this);
-    }
+
     // homing weapons
     if (enemyGroup.length > 0) {
         rockets.forEachAlive(pickTarget,rockets);

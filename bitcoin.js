@@ -58,9 +58,9 @@ function pickUpDogeCoin() {
 function win () {
     //  You Win!
     gameEndText = game.add.text(0,0, "YOU WON!!!\n(it took you "+counter+" seconds)",
-        { font: "100px Arial", fill: "#fff", align: "center" });
+        { font: "80px Arial", fill: "#fff", align: "center" });
     gameEndText.fixedToCamera = true;
-    gameEndText.cameraOffset.setTo(300,300);
+    gameEndText.cameraOffset.setTo(200,200);
     hasCoin = false;
     game.time.events.add(Phaser.Timer.SECOND * 5, restart, this);
 }
