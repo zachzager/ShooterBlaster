@@ -28,7 +28,7 @@ var playerDMG = 10;
 var pauseInput;
 var background;
 var gameEndText;
-var counter = 0;
+var counter;
 
 // text related globals
 var coinText;
@@ -184,6 +184,7 @@ function create() {
     player.enableBody = true;
     player.body.collideWorldBounds = true;
     hasKey = 0;
+    counter = 0;
     
     // enemies
     addEnemies();
