@@ -34,7 +34,7 @@ function preload () {
 
     /* IMAGE FILES */
     game.load.image('background2','images/space_mac.png');
-    //game.load.image('background','images/xp.jpg');
+    game.load.image('background','images/xp.jpg');
     game.load.image('sandbrick','images/sandBrick.png');
     game.load.image('lava', 'images/firewall.png');
     game.load.image('wall', 'images/wall.jpg');
