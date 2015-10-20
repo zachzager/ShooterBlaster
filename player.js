@@ -73,10 +73,7 @@ function updatePlayer(){
 
     if (player.health <= 0) {
         rektFX.play();
-        player.kill();
-        game.add.text(player.x, player.y, "GAME OVER",
-            { font: "30px Arial", fill: "#fff", align: "center" });
-        game.time.events.add(Phaser.Timer.SECOND * 3, restart, this);
+        killPlayer();
     }
 
     game.camera.follow(player);
@@ -182,7 +179,8 @@ function weaponFire() {
 // player dies
 function killPlayer() {
     player.kill();
-    game.add.text(player.x, player.y, "GAME OVER - You lasted: "+counter+" seconds",
+    game.add.text(player.x, player.y, "GAME OVER\nYou lasted: "+counter+" seconds",
         { font: "30px Arial", fill: "#fff", align: "center" });
     game.time.events.add(Phaser.Timer.SECOND * 3, restart, this);
 }
+
