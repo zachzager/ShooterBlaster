@@ -38,7 +38,7 @@ function preload () {
 
     /* IMAGE FILES */
     game.load.image('background2','images/space_mac.png');
-    game.load.image('background','images/xp.jpg');
+    game.load.image('xp','images/xp.jpg');
     game.load.image('sandbrick','images/sandBrick.png');
     game.load.image('lava', 'images/firewall.png');
     game.load.image('wall', 'images/wall.jpg');
@@ -127,7 +127,7 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     background2 = game.add.tileSprite(1470, 990, 2640, 1920, 'background2');
     background2.tileScale.setTo(1.2,1.5);
-    background = game.add.tileSprite(0, 0, 2640, 1920, 'background');
+    background = game.add.tileSprite(0, 0, 2640, 1920, 'xp');
     background.tileScale.setTo(1.375,1.6);
 
     /* AUDIO */
