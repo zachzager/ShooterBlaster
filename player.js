@@ -2,7 +2,6 @@
 // ShooterBlaster player file
 
 var P_skin = { health:0, type:0, name:"N/A", speed:0};
-var P_weapon = "temp";
 var wasd;
 var arsenal;
 
