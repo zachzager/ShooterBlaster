@@ -44,8 +44,8 @@ Dogecoin.prototype.update = function() {
 }
 
 function pickUpDogeCoin() {
-	win();
 	this.kill();
+	win();
 }
 
 // Win situations
