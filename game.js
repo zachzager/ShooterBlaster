@@ -39,8 +39,6 @@ function preload () {
     game.load.image('lava', 'images/firewall.png');
     game.load.image('wall', 'images/wall.jpg');
         // http://i.ytimg.com/vi/fdJrQMvLHSM/hqdefault.jpg
-    game.load.image('XP', 'images/windowsXP.jpg');
-        //www.hdwallpapers.in
     game.load.image('key', 'images/usb.png');
     game.load.image('door', 'images/stone.png');
     game.load.image('downloadDoor','images/download.png');
