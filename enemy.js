@@ -13,7 +13,6 @@ var E_type = { health:20, name:"N/A", speed:0, coin:1, aggro:0,
 
 Enemy.prototype = Object.create(Phaser.Sprite.prototype);
 Enemy.prototype.constructor = Enemy;
-Enemy.prototype.gettingHitByP = gettingHitByP;
 Enemy.prototype.dropCoin = dropCoin;
 
 function Enemy(game, x, y, E_type) {
@@ -127,12 +126,6 @@ Enemy.prototype.enemyTakesDamage = function(enemy,projectile) {
     }
 
     endProjectile(projectile); // destroy projectile
-}
-
-//debugging function
-function gettingHitByP() {
-    killPlayer();
-    this.dropCoin();
 }
 
 function dropCoin() {
