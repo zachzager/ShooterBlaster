@@ -116,7 +116,6 @@ function preload () {
     game.load.audio('explosion4FX', 'audio/explosion4.wav');
     game.load.audio('coinFX', 'audio/coin.wav');
     game.load.audio('rektFX', 'audio/rekt.wav');
-
 }
 
 function create() {

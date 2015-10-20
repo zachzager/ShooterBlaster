@@ -6,7 +6,7 @@ function gamePause() {
     if (pauseInput.isDown) {
         game.paused = true;
         menu = game.add.text(game.camera.x, game.camera.y, "Click to unpause",
-            { font: "30 px Arial", fill: "#FFA500", align: "center"});
+            { font: "60 px Arial", fill: "#FFA500", align: "center"});
     }
 }
 
